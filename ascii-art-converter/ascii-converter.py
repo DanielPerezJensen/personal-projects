@@ -4,17 +4,17 @@ import os
 
 
 def average(rgb_tuple):
-
+    '''Returns the average of the three colors in a given pixel'''
     return int(sum(rgb_tuple) / float(len(rgb_tuple)))
 
 
 def lightness(rgb_tuple):
-
+    '''Returns the lightness of a given pixel'''
     return max(rgb_tuple) + min(rgb_tuple) / 2
 
 
 def luminosity(rgb_tuple):
-
+    '''Returns luminosity of given pixel based on how humans perceive colors'''
     r = rgb_tuple[0]
     g = rgb_tuple[1]
     b = rgb_tuple[2]
@@ -23,7 +23,8 @@ def luminosity(rgb_tuple):
 
 
 def ascii_convert(file, brightness_indicator='average', invert=False):
-
+    '''Returns string of characters that is an ascii art representation
+    of given image'''
     im = Image.open(file)
     rgb_list = array(im)
     average_matrix = []
@@ -79,7 +80,8 @@ def main():
         print('{0}: {1}'.format(i, file))
         i += 1
 
-    selected_file_number = int(input("\nPlease input the number of the file you want to convert to ascii-art: ")) - 1
+    selected_file_number = int(input("""\nPlease input the number of the file
+                               you want to convert to ascii-art: """)) - 1
 
     i = 1
 
@@ -88,9 +90,11 @@ def main():
         print("{0}: {1}".format(i, brightness_type))
         i += 1
 
-    selected_brightness_type = int(input("\nPlease select the number of how you want to calculate brightness: ")) - 1
+    selected_brightness_type = int(input("""\nPlease select the number of how
+                                   you want to calculate brightness: """)) - 1
 
-    inverse_select = input("\nDo you want to inverse black with white? (type yes to invert or anything else to not invert): ")
+    inverse_select = input("""\nDo you want to inverse black with white? (type
+                           yes to invert or anything else to NOT invert): """)
 
     selected_file = directory[selected_file_number]
     brightness_type = brightness_list[selected_brightness_type]
@@ -100,7 +104,8 @@ def main():
     else:
         inverse = False
 
-    print(ascii_convert(selected_file, brightness_indicator=brightness_type, invert=inverse))
+    print(ascii_convert(selected_file, brightness_indicator=brightness_type,
+                        invert=inverse))
     print("YOU MAY WANT TO ZOOM OUT A BIT")
 
 
