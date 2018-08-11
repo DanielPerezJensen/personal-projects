@@ -5,15 +5,13 @@ import sys
 from termcolor import colored
 
 
-# initializes the board with given height and width
 def init(height, width):
-
+    '''Initializes a dead board with given height and width'''
     return [[0 for _ in range(width)] for _ in range(height)]
 
 
-# randomly resurrects tiles with a coin toss
 def resurrect_random(board):
-
+    '''Randomly resurrects tiles on given board'''
     for row in board:
         for i in range(len(row)):
             if random.random() > 0.5:
@@ -22,9 +20,8 @@ def resurrect_random(board):
     return board
 
 
-# prints the given board to terminal in a pretty fashion
 def pretty_print(board):
-
+    '''Renders a given board to the shell'''
     string_list = []
 
     for row in board:
@@ -35,13 +32,12 @@ def pretty_print(board):
             else:
                 string_list.append(colored(u'\u2588', 'green'))
         string_list.append('|\n')
-    
+
     print(''.join(string_list))
 
 
-# returns list of neighbours of given tile (represented as row and col)
 def count_neighbours(board, row, col):
-
+    '''Counts amount of neighbors in the Moore Neighborhood'''
     count = 0
     current_tile = board[row][col]
     # loop around neighbours of given row/col combination
@@ -62,9 +58,8 @@ def count_neighbours(board, row, col):
     return count
 
 
-# calculates next board state based on a given board
 def iterate(board):
-
+    '''Computes next iteration of given board based on survival rules'''
     new_board = init(len(board), len(board[0]))
     for i in range(len(board)):
         for j in range(len(board[i])):
@@ -85,7 +80,7 @@ def iterate(board):
 
 
 def load_initial_state(file):
-
+    '''Loads a .txt file into the program to be used as starting board'''
     file = 'designed/' + file
     initial_state = []
     with open(file, 'r') as f:
@@ -100,7 +95,7 @@ def load_initial_state(file):
 
 
 def play_game_of_life(initial_state):
-
+    '''Runs the game of life forever'''
     board = initial_state
     pretty_print(board)
     print()

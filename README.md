@@ -20,8 +20,5 @@
 
     <img src="https://upload.wikimedia.org/wikipedia/commons/3/37/Game_of_life_animated_LWSS.gif"/>
 
-4. **eredivisie-ranking**
-
-    * *An early* stage machine-learning implementation to predict what ranking a given team will reach in the Dutch [Eredivisie](https://en.wikipedia.org/wiki/Eredivisie)
 
 ###### All written in Python 3.6

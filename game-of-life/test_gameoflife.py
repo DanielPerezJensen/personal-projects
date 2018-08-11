@@ -1,4 +1,4 @@
-import lifegame as lg
+import gameoflife as gol
 
 if __name__ == "__main__":
 
@@ -10,7 +10,7 @@ if __name__ == "__main__":
                             [0, 0, 0],
                             [0, 0, 0]]
 
-    actual_next_state1 = lg.iterate(init_state1)
+    actual_next_state1 = gol.iterate(init_state1)
 
     if expected_next_state1 == actual_next_state1:
         print('Passed 1')
@@ -25,7 +25,7 @@ if __name__ == "__main__":
     expected_next_state2 = [[0, 1, 1],
                             [0, 1, 1],
                             [0, 0, 0]]
-    actual_next_state2 = lg.iterate(init_state2)
+    actual_next_state2 = gol.iterate(init_state2)
     if expected_next_state2 == actual_next_state2:
         print('Passed 2')
     else:
