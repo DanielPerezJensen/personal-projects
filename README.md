@@ -20,5 +20,9 @@
 
     <img src="https://upload.wikimedia.org/wikipedia/commons/3/37/Game_of_life_animated_LWSS.gif"/>
 
+4. **classical-algorithms**
+
+    * *Some classical sorting* and search algorithms, currently contains:
+        1. bubble-sort
 
 ###### All written in Python 3.6
