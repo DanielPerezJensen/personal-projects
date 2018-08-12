@@ -52,10 +52,10 @@ def ascii_convert(file, brightness_indicator='average', invert=False):
     text_string = []
     for i in range(len(average_matrix)):
         for j in range(len(average_matrix[i])):
-            # mathematically chooses correct char for the brightness
+            # chooses correct char for the brightness
             ascii_char = int(average_matrix[i][j] /
                              (255 / len(conversion_list)))
-            # in case the calculation goes wrong
+            # in case a rounding error occurs
             if ascii_char > 67:
                 ascii_char = 67
             for _ in range(2):
