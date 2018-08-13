@@ -20,3 +20,41 @@ def bubble_sort(numbers):
         sorted_list = [numbers[-1]] + sorted_list
         del numbers[-1]
     return numbers + sorted_list
+
+
+def merge_sort(numbers):
+    '''Sorts a list based on the traditional merge-sort'''
+
+    # Sorted function are more efficient than recursive functions
+    # For lists under approx. 20 elements.
+    if len(numbers) <= 20:
+        return sorted(numbers)
+
+    result = []
+
+    mid = len(numbers) // 2
+
+    left = merge_sort(numbers[mid:])
+    right = merge_sort(numbers[:mid])
+
+    l_idx = 0
+    r_idx = 0
+
+    # compare all numbers in the two lists
+    while l_idx < len(left) and r_idx < len(right):
+        if left[l_idx] > right[r_idx]:
+            result.append(right[r_idx])
+            r_idx += 1
+        else:
+            result.append(left[l_idx])
+            l_idx += 1
+
+    # make sure leftover numbers are added to result
+    result += left[l_idx:]
+    result += right[r_idx:]
+
+    return result
+
+
+number_list = [1, 2, 15, 2, 4, 8, 9, 7, 5]
+print(merge_sort(number_list))

@@ -24,5 +24,6 @@
 
     * *Some classical sorting* and search algorithms, currently contains:
         1. bubble-sort
+        2. Merge-sort
 
 ###### All written in Python 3.6
