@@ -73,15 +73,16 @@ def main():
     i = 1
 
     brightness_list = ['average', 'luminosity', 'lightness']
-    directory = [file for file in os.listdir() if file.endswith('jpg')]
+    directory = [file for file in os.listdir("images") if file.endswith('jpg')]
+    print(directory)
 
     for file in directory:
 
         print('{0}: {1}'.format(i, file))
         i += 1
 
-    selected_file_number = int(input("""\nPlease input the number of the file
-                               you want to convert to ascii-art: """)) - 1
+    selected_file_number = int(input("\nPlease input the number of the file" +
+                                     "you want to convert to ascii-art: ")) - 1
 
     i = 1
 
@@ -90,14 +91,14 @@ def main():
         print("{0}: {1}".format(i, brightness_type))
         i += 1
 
-    selected_brightness_type = int(input("""\nPlease select the number of how
-                                   you want to calculate brightness: """)) - 1
+    brightnes_type = int(input("\nPlease select the number of how" +
+                               "you want to calculate brightness: ")) - 1
 
-    inverse_select = input("""\nDo you want to inverse black with white? (type
-                           yes to invert or anything else to NOT invert): """)
+    inverse_select = input("\nDo you want to inverse black with white? (type" +
+                           " yes to invert or anything else to NOT invert): ")
 
-    selected_file = directory[selected_file_number]
-    brightness_type = brightness_list[selected_brightness_type]
+    selected_file = "images/" + directory[selected_file_number]
+    brightness_type = brightness_list[brightnes_type]
 
     if inverse_select == "yes":
         inverse = True
