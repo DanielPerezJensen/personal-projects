@@ -54,7 +54,3 @@ def merge_sort(numbers):
     result += right[r_idx:]
 
     return result
-
-
-number_list = [1, 2, 15, 2, 4, 8, 9, 7, 5]
-print(merge_sort(number_list))
