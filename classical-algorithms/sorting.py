@@ -25,10 +25,8 @@ def bubble_sort(numbers):
 def merge_sort(numbers):
     '''Sorts a list based on the traditional merge-sort'''
 
-    # Sorted function are more efficient than recursive functions
-    # For lists under approx. 20 elements.
-    if len(numbers) <= 20:
-        return sorted(numbers)
+    if len(numbers) <= 1:
+        return numbers
 
     result = []
 
