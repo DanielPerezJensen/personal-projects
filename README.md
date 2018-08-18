@@ -26,4 +26,8 @@
         1. bubble-sort
         2. Merge-sort
 
+5. PyAI-chess
+    
+    ~~A cli implementation of [chess](https://en.wikipedia.org/wiki/Chess) with an AI opponent to boot.~~ **UNDER PROGRESS**
+    
 ###### All written in Python 3.6
