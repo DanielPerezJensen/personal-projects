@@ -29,5 +29,9 @@
 5. PyAI-chess
     
     ~~A cli implementation of [chess](https://en.wikipedia.org/wiki/Chess) with an AI opponent to boot.~~ **UNDER PROGRESS**
+
+6. AI-tictactoe
+
+    A cli implementation of [tic-tac-toe](https://en.wikipedia.org/wiki/Tic-tac-toe) with a perfect ai player in the module.
     
 ###### All written in Python 3.6
