@@ -46,6 +46,9 @@ class TicTacToe():
             self.board[move_x][move_y] = self.current_player
             self.last_move = move
             self.switch()
+            return True
+        else:
+            return False
 
     def switch(self):
         '''Switches current player'''
@@ -93,11 +96,12 @@ class TicTacToe():
 
 
 class MiniMaxPlayer():
+    '''A perfect player that uses minimax to determine best move'''
     def __init__(self, player):
         self.player_mark = player
 
     def score(self, game, depth):
-        '''Gives score to given board'''
+        '''returns score of given board'''
         if game.game_won():
             if game.winning_player is self.player_mark:
                 return 10 - depth
@@ -146,8 +150,8 @@ class MiniMaxPlayer():
     def best_move(self, game):
         '''returns best move calculated with mini-max'''
         self.minimax(game, 0)
-        print(self.moves)
-        print(self.scores)
+        # print(self.moves)
+        # print(self.scores)
         return self.choice
 
 
@@ -169,6 +173,6 @@ while not tictactoe_game.game_over():
     print()
 
 if tictactoe_game.game_won():
-    print(tictactoe_game.winnin_player, "has won!")
+    print(tictactoe_game.winning_player, "has won!")
 else:
     print("Nobody has won.")
