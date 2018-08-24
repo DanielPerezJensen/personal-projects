@@ -83,9 +83,10 @@ class TicTacToe():
                     if x == y and board[0][0] == board[1][1] == board[2][2]:
                         self.winning_player = mark
                         return True
-                    if x + y == 2 and board[0][2] == board[1][1] == board[2][0]:
-                        self.winning_player = mark
-                        return True
+                    if x + y == 2:
+                        if board[0][2] == board[1][1] == board[2][0]:
+                            self.winning_player = mark
+                            return True
         return False
 
     def revert_move(self, move):
