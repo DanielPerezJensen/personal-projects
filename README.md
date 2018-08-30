@@ -1,0 +1,1 @@
+# A tool for scraping financial data of any given stock from investopedia.com
