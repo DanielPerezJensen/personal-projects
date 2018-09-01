@@ -26,12 +26,13 @@
         1. bubble-sort
         2. Merge-sort
 
-5. PyAI-chess
-    
-    ~~A cli implementation of [chess](https://en.wikipedia.org/wiki/Chess) with an AI opponent to boot.~~ **UNDER PROGRESS**
-
-6. AI-tictactoe
+5. tic-tac-toe
 
     A cli implementation of [tic-tac-toe](https://en.wikipedia.org/wiki/Tic-tac-toe) with a perfect ai player in the module.
+
+6. deep-learning
     
+    Some small [deep learning](https://en.wikipedia.org/wiki/Deep_learning) scripts to get started.  
+
+
 ###### All written in Python 3.6
