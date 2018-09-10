@@ -27,8 +27,10 @@ def ascii_convert(file, brightness_indicator='average', invert=False):
     of given image'''
     im = Image.open(file)
     rgb_list = array(im)
-    average_matrix = []
+    result_matrix = []
 
+    # go through matrix of image and convert rgb-value to a single value based
+    # on either average, lightness or luminosity
     for i in range(len(rgb_list)):
         row = []
         for j in range(len(rgb_list[i])):
@@ -39,7 +41,7 @@ def ascii_convert(file, brightness_indicator='average', invert=False):
             elif brightness_indicator == 'luminosity':
                 brightness = luminosity(rgb_list[i][j])
             row.append(brightness)
-        average_matrix.append(row)
+        result_matrix.append(row)
 
     conversion_list = ['`', '^', '\\', '"', ',', ':', ';', 'I', 'l', '!', 'i',
                        '~', '+', '_', '-', '?', ']', '[', '}', '{', '1', ')',
@@ -50,14 +52,16 @@ def ascii_convert(file, brightness_indicator='average', invert=False):
                        '$']
 
     text_string = []
-    for i in range(len(average_matrix)):
-        for j in range(len(average_matrix[i])):
+    for i in range(len(result_matrix)):
+        for j in range(len(result_matrix[i])):
             # chooses correct char for the brightness
-            ascii_char = int(average_matrix[i][j] /
+            ascii_char = int(result_matrix[i][j] /
                              (255 / len(conversion_list)))
             # in case a rounding error occurs
             if ascii_char > 67:
                 ascii_char = 67
+            # make every row twice as wide,
+            # because a row is higher than it is wide
             for _ in range(2):
                 if invert:
                     text_string.append(conversion_list[-ascii_char + 1])

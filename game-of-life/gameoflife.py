@@ -120,7 +120,7 @@ def main():
         board = init(int(height), int(width))
         board = resurrect_random(board)
         start = input("Do you want to start the game? (type yes or no): ")
-        if start == "yes":
+        if start == "yes" or "y":
             play_game_of_life(board)
         else:
             sys.exit(0)
@@ -129,7 +129,7 @@ def main():
         file = os.listdir('designed')[chosen_file - 1]
         board = load_initial_state(file)
         start = str(input("Do you want to start the game? (type yes or no): "))
-    if start == "yes":
+    if start == "yes" or "y":
         play_game_of_life(board)
     else:
         sys.exit(0)
