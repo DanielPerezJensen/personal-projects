@@ -4,11 +4,13 @@ import random
 
 class TicTacToe():
     '''Class that has all necesarry components for a tic tac toe game'''
-    def __init__(self):
+    def __init__(self, player1, player2):
         self.board = [[None, None, None],
                       [None, None, None],
                       [None, None, None]]
-        self.current_player = "x"
+        self.current_player = player1.player_mark
+        self.player1 = player1
+        self.player2 = player2
 
     def render(self):
         '''Renders the current board state'''
@@ -95,6 +97,34 @@ class TicTacToe():
         self.switch()
         self.board[x][y] = None
 
+    def play(self):
+                
+        while not self.game_over():
+            player_1_move = self.player1.best_move(self)
+            time.sleep(1)
+            self.move(player_1_move)
+            self.render()
+            print()
+            
+            if self.game_over():
+                if self.game_won():
+                    print(self.winning_player, "has won!")
+                    exit(0)
+                print("Nobody has won")
+                exit(0)                
+
+            player_2_move = self.player2.best_move(self)
+            time.sleep(1)
+            self.move(player_2_move)
+            self.render()
+            print()
+
+        if self.game_won():
+            print(self.winning_player, "has won!")
+            exit(0)
+        else:
+            print("Nobody has won.")
+
 
 class MiniMaxPlayer():
     '''A perfect player that uses minimax to determine best move'''
@@ -151,29 +181,30 @@ class MiniMaxPlayer():
     def best_move(self, game):
         '''returns best move calculated with mini-max'''
         self.minimax(game, 0)
-        # print(self.moves)
-        # print(self.scores)
         return self.choice
 
 
-tictactoe_game = TicTacToe()
+class HumanPlayer():
+    def __init__(self, player):
+        self.player_mark = player
 
-player1 = MiniMaxPlayer("x")
+    def best_move(self, game):
+        possible_moves = game.possible_moves()
+        x = None
+        y = None
+        while True:
+            x = int(input("What row do you want to mark?: ")) - 1
+            y = int(input("What column do you want to mark?: ")) - 1
+            if (x, y) in possible_moves:
+                break
+            else:
+                print("That position has already been marked")
+        return (x, y)
+
+
+# player1 starts, indepent of marks.
+player1 = HumanPlayer("x")
 player2 = MiniMaxPlayer("o")
 
-while not tictactoe_game.game_over():
-    player_1_move = player1.best_move(tictactoe_game)
-    time.sleep(1)
-    tictactoe_game.move(player_1_move)
-    tictactoe_game.render()
-    print()
-    player_2_move = player2.best_move(tictactoe_game)
-    time.sleep(1)
-    tictactoe_game.move(player_2_move)
-    tictactoe_game.render()
-    print()
-
-if tictactoe_game.game_won():
-    print(tictactoe_game.winning_player, "has won!")
-else:
-    print("Nobody has won.")
+game = TicTacToe(player1, player2)
+game.play()
