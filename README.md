@@ -34,5 +34,8 @@
     
     Some small [deep learning](https://en.wikipedia.org/wiki/Deep_learning) scripts to get started.  
 
+7. findata-scraper
+    
+    Small custom script for extracting financial data from investopedia.com.
 
 ###### All written in Python 3.6
