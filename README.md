@@ -4,11 +4,7 @@
     
     * *A tool* that converts a given .jpeg-file into ascii-art.
 
-2. **samenvattinger**
-
-    * *A tool* that summarizes a given .txt-file based on [cosine similarity](https://en.wikipedia.org/wiki/Cosine_similarity).
-
-3. **game-of-life**
+2. **game-of-life**
 
     * *A tool* that runs [Conway's Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life) on the command line implemented in Python.
 
@@ -20,21 +16,21 @@
 
     <img src="https://upload.wikimedia.org/wikipedia/commons/3/37/Game_of_life_animated_LWSS.gif"/>
 
-4. **classical-algorithms**
+3. **classical-algorithms**
 
     * *Some classical sorting* and search algorithms, currently contains:
         1. bubble-sort
         2. Merge-sort
 
-5. tic-tac-toe
+4. tic-tac-toe
 
     A cli implementation of [tic-tac-toe](https://en.wikipedia.org/wiki/Tic-tac-toe) with a perfect ai player in the module.
 
-6. deep-learning
+5. deep-learning
     
     Some small [deep learning](https://en.wikipedia.org/wiki/Deep_learning) scripts to get started.  
 
-7. findata-scraper
+6. findata-scraper
     
     Small custom script for extracting financial data from investopedia.com.
 
