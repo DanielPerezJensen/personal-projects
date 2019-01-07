@@ -22,15 +22,15 @@
         1. bubble-sort
         2. Merge-sort
 
-4. tic-tac-toe
+4. **tic-tac-toe**
 
     A cli implementation of [tic-tac-toe](https://en.wikipedia.org/wiki/Tic-tac-toe) with a perfect ai player in the module.
 
-5. deep-learning
+5. **deep-learning**
     
     Some small [deep learning](https://en.wikipedia.org/wiki/Deep_learning) scripts to get started.  
 
-6. findata-scraper
+6. **findata-scraper**
     
     Small custom script for extracting financial data from investopedia.com.
 
