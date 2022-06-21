@@ -2,7 +2,7 @@ Pillow==7.1.0
 keras==2.2.2
 matplotlib==2.2.3
 nltk==3.4.5
-numpy==1.15.1
+numpy==1.22.0
 tensorflow==1.15.4
 termcolor==1.1.0
 requests==2.20.0
